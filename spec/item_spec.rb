@@ -13,12 +13,12 @@ describe("Item") do
 
   describe(".rank") do
     it("sorts items by rank") do
-      item = Item.new("kittens", [1])
+      item = Item.new("kittens", [3])
       item.save()
-      item2 = Item.new("bubbles", [1])
+      item2 = Item.new("bubbles", [5])
       item2.save()
-      expect(item.rank()).to(eq([1]))
-      expect(item2.rank()).to(eq([1]))
+      item_test = Item.rank()
+      expect(item_test).to(eq(Item.all()))
     end
   end
 
