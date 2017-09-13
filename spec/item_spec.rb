@@ -1,5 +1,6 @@
 require('rspec')
 require('item')
+require('pry')
 
 describe("Item") do
   before() do
@@ -23,7 +24,7 @@ describe("Item") do
   end
 
   describe("#save") do
-    it("saves an item to the list of items") do
+    it("check if item is already in list, and if not, saves an item to the list of items") do
       item = Item.new("tacos", [1])
       item.save()
       expect(Item.all()).to(eq([item]))
@@ -60,5 +61,11 @@ describe("Item") do
       expect(Item.find(2)).to(eq(item2))
     end
   end
+
+  # describe(".update") do
+  #   it("changes  item name by rank or rank by name") do
+  #
+  #   end
+  # end
 
 end

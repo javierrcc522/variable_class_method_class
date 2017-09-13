@@ -5,6 +5,7 @@ require('./lib/item')
 
 get('/') do
   @list = Item.all()
+
   erb(:list)
 end
 
@@ -13,7 +14,10 @@ post('/') do
   rank = params["rank"]
   item = Item.new(name, rank)
   item.save()
+  item.update()
   @list = Item.all()
   @list = Item.rank()
+
+
   erb(:list)
 end
