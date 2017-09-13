@@ -15,7 +15,6 @@ post('/') do
   item = Item.new(name, rank)
   item.save()
   item.update()
-  @list = Item.all()
   @list = Item.sort()
 
 

@@ -12,19 +12,19 @@ describe("Item") do
     end
   end
 
-  describe(".rank") do
+  describe(".sort") do
     it("sorts items by rank") do
       item = Item.new("kittens", [3])
       item.save()
       item2 = Item.new("bubbles", [5])
       item2.save()
-      item_test = Item.rank()
+      item_test = Item.sort()
       expect(item_test).to(eq(Item.all()))
     end
   end
 
   describe("#save") do
-    it("check if item is already in list, and if not, saves an item to the list of items") do
+    it("check if item is already in list, and if not, saves an item to the list") do
       item = Item.new("tacos", [1])
       item.save()
       expect(Item.all()).to(eq([item]))
