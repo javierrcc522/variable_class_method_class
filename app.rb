@@ -16,7 +16,7 @@ post('/') do
   item.save()
   item.update()
   @list = Item.all()
-  @list = Item.rank()
+  @list = Item.sort()
 
 
   erb(:list)

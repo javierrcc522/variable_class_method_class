@@ -9,7 +9,7 @@ class Item
     @id = @@list.length + 1
   end
 
-  def self.rank
+  def self.sort
     @@list.sort_by! {|item| item.rank}
   end
 
